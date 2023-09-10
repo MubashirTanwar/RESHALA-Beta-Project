@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;1,100;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Login & Registration Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms">
+            <!-- Registration Form -->
+            <div class="form signup" id="login">
+                <div class="row">
+                    <span class="title">Log-in</span>
+                    <div class="col">
+                        <form action="/login" method="post">
+                            <div class="input-field">
+                                <input type="email" name="email" placeholder="Enter your email" required />
+                                <i class="uil uil-envelope icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="password" class="password"
+                                    placeholder="Enter your password" required />
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="password2" class="password"
+                                    placeholder="Enter password again" required />
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                            </div>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <button class="button" type="submit" value="Log-in">
+                        Login
+                    </button>
+                    
+                </div>
+            </form>
+            <div class="login-signup">
+                <span class="text">Don't have an account? <a href="/register" class="text login-link">Sign-up Now</a></span>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/javaScripts/log.js"></script>
+</body>
+
+</html>

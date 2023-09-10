@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RESHALA</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="/public/images/logo_favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/css/Styles.css" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="row">
+					<div id="img" class="col-lg-4 col-md-6">
+						<div class="navbar-header">
+							<a href="">
+								<div class="logo-img" alt="logo image">
+									<img src="/images/image-removebg-preview.png" alt="Logo" style="
+										height: 43px;
+									" />
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="search" placeholder="Search...">
+							<a href="#search" class="search_icon">
+								<i class="fa fa-search"></i>
+							</a>
+						</div>
+					</div>
+					<div id="nav-rig" class="col-lg-4 col-md-6">
+						<button id="sell" type="button" class="btn"><a href="/sell"><i class="fa fa-plus"></i> SELL
+							</a></button>
+						<button class="profile-button" onclick="openSidebar()"><i class="fa fa-user"></i></button>
+						<button id="location" type="button" class="btn btn-lg">Mumbai&nbsp; <i
+								class="fa fa-location-dot"></i></button>
+						<div id="sidebar" class="sidebar">
+							<a class="close-sidebar-btn" onclick="closeSidebar()"><i class="fa fa-times"></i></a>
+							<div class="sidebar-content">
+								<div class="row">
+									<div class="col-lg-4 profile-row">
+										<div class="profile-pic-container">
+											<img src="Images/pfp-modified.png" alt="Profile Picture"
+												class="profile-pic">
+										</div>
+									</div>
+									<div class="col-lg-8 profile-info">
+										<h4 class="profile-name"><%- user.name %></h4>
+										<p class="profile-course"> <%-user.course %></p>
+										<p class="profile-college"><%- user.college %></p>
+										<button class="edit-profile-btn"><i class="fa fa-pencil"></i></button>
+									</div>
+								</div>
+								<hr>
+								<div class="nav-sel">
+									<ul class="nav nav-pills nav-stacked">
+										<li><a href="/mylist"><i class="fa fa-list-ul"></i> My Listings</a></li>
+										<li><a href="#"><i class="fa fa-shopping-cart"></i>My Purchases</a></li>
+										<li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
+										<li><a href="#"><i class="fa fa-question-circle"></i>Help</a></li>
+										<li><a href="#"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+			</div>
+			</div>
+			</div>
+		</nav>
+	</header>
+	<div class="categories-sel">
+		<div class="row text-center">
+
+			<div class="col-md-3">
+				<div class="card rounded-3 border-0 bg-purple">
+					<div class="card-body">
+						<i class="fa fa-book fa-2x mb-3" aria-hidden="true"></i>
+						<h5 class="card-title text-white mb-0">Text-Book</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card rounded-3 border-0 bg-purple">
+					<div class="card-body">
+						<i class="fa fa-book-bookmark fa-2x mb-3"></i>
+						<h5 class="card-title text-white mb-0">Fiction/Non-Fiction</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card rounded-3 border-0 bg-purple">
+					<div class="card-body">
+						<i class="fa fa-ruler-horizontal fa-2x mb-3"></i>
+						<h5 class="card-title text-white mb-0">Apparatus</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card rounded-3 border-0 bg-purple">
+					<div class="card-body">
+						<i class="fa fa-handshake fa-2x mb-3"></i>
+						<h5 class="card-title text-white mb-0">Rent</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="recommendations">
+		<h2>Fresh Recommendations</h2>
+	</div>
+<div>
+	<div>
+		<div id="cardContainer" class="container">	
+
+				<% for( let i = 0; i < allBooks.length; i++ ) { %>
+					<div class="product-card">
+						<a href="/product/<%= allBooks[i].id %>">
+						<div class="product-tumb">
+						  <img src="<%= allBooks[i].url %>" alt="">
+						</div>
+						<div class="product-details">
+						  <span class="product-catagory">Mumbai</span>
+						  <h4><%= allBooks[i].bkname %></h4>
+						  <p><%= allBooks[i].description %></p>
+						  <div class="product-bottom-details">
+							<div class="product-price">₹ <%= allBooks[i].price %></div>
+							<div class="product-links">
+							  <a href=""><i class="fa fa-heart"></i></a>
+							  <a href=""><i class="fa fa-shopping-cart"></i></a>
+							</div>
+						  </div>
+						</div></a>
+					  </div> 
+				  <% } %>
+
+
+
+			</div>
+	</div>
+</div>
+
+	<div>
+		<!-- HTML !-->
+
+
+
+
+		<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h2>RESHALA</h2>
+
+
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">Pricing</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">RESHALA © 2022</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-linkedin"></i></a>
+					<a href="#"><i class="fab fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p>Contact Us</p>
+
+				<form action="#" method="post">
+
+					<input type="text" name="email" placeholder="Email">
+					<textarea name="message" placeholder="Message"></textarea>
+					<button>Send</button>
+
+				</form>
+
+			</div>
+
+		</footer>
+
+	</div>
+	<script src="/javaScripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;1,100;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="/css/register.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>  .modal-dialog {
+            display: flex;
+            align-items: center;
+      flex-direction: column;
+      margin: 0;
+    }
+    
+    .modal-content {
+      font-family: "Montserrat", sans-serif;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      text-align: left;
+
+    }
+    
+    .modal-body {
+      overflow-y: auto;
+    }
+    
+    .form-group{
+        margin: 20px 0;
+    }
+    /* Set HR color */
+    hr {
+      border-top: 1px solid white;
+    }
+    
+    /* Increase form size and font */
+    .modal-body {
+      width: 600px;
+      font-size: 1.7rem;
+      padding: 0 15px;
+      margin-left: 220px;
+    }
+    
+    .form-control {
+      width: 30pc;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 20px;
+    }
+    
+    /* Style file upload input */
+    .form-control-file {
+      padding: 10px;
+      color: #999;
+    }
+    
+    /* Preview uploaded images */
+    button[type="submit"] {
+      background-color: #4a2a69;
+      color: white;
+      padding: 17px;
+    border-radius: 48px;
+    margin: 0 200px;
+
+    }
+    .modal-footer{
+      display: flex;
+    flex-direction: column;
+    text-align: right
+    }
+    .modal-footer .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #484848 !important;
+      border: none;
+      /* background-color: transparent; */
+    }
+    
+    button.close:hover {
+      font-size: 2.5rem;
+      color: #4a2a69;
+    
+    
+    }
+    
+    /* Style form labels */
+    label {
+      font-size: 1.3rem;
+      color: #555;
+      font-weight: 600;
+      display: block;
+    }</style>
+    <title>Regsiter</title>
+</head>
+
+<body>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+							  
+        <form action="/" method="post" id="bookform">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="book-name">Book Name</label>
+              <input type="text" name="bookName" class="form-control" id="book-name" placeholder="Enter book name" required>
+            </div>
+            <div class="form-group">
+              <label for="book-version">Version</label>
+              <input type="text" name="bookVersion" class="form-control" id="book-version" placeholder="Enter book version" required>
+            </div>
+            <div class="form-group">
+              <label for="author-name">Author Name</label>
+              <input type="text" name="authorName" class="form-control" id="author-name" placeholder="Enter author name" required>
+            </div>
+            <div class="form-group">
+              <label for="publication">Publication</label>
+              <input type="text" name="publication" class="form-control" id="publication" placeholder="Enter publication" required>
+            </div>
+            <div class="form-group">
+              <label for="book-description">Book Description</label>
+              <input type="text" name="description" class="form-control" id="book-description" rows="3" placeholder="Enter book description" required>
+            </div>
+            <div class="form-group">
+              <label for="price">Enter amount in Rupees</label>
+              <input type="text" name="price" class="form-control" id="price" placeholder="Enter selling price" required>
+            </div>
+            <div class="form-group">
+                <label for="Image-URL">Image URL</label>
+                <input type="text" name="URL" class="form-control" id="img-url" placeholder="Enter valid imgur link" required>
+              </div>
+            
+            
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="form_submit()" class="close closeit" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times"></i>
+              </button>
+                        <button type="submit" class="btn btn-primary">Make Listing &nbsp;  <i class="fa fa-upload" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
+  </div>
+</body>

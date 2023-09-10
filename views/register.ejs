@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;1,100;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Regsiter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms">
+            <!-- Registration Form -->
+            <div class="form signup" id="signup">
+                <div class="row">
+                    <span class="title">Registration</span>
+                    <div class="col">
+                        <form action="/register" method="post">
+                            <div class="input-field">
+                                <input type="email" name="email" placeholder="Enter your email" required />
+                                <i class="uil uil-envelope icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="number" placeholder="Enter your phone number" required />
+                                <i class="uil uil-phone icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="password" class="password"
+                                    placeholder="Enter a password" required />
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                            </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-field">
+                            <input type="text" name="name" placeholder="Enter your name" required />
+                            <i class="uil uil-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="colname" placeholder="Enter your college's name" required />
+                            <i class="uil uil-backpack"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="uniname" placeholder="Enter your university's name" required />
+                            <i class="uil uil-university"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="course" placeholder="Enter your course name" required />
+                            <i class="uil uil-book-open"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="year" placeholder="Enter your course year" required />
+                            <i class="uil uil-calendar-alt"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="checkbox-text">
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="termCon" required />
+                        <label for="termCon" class="text">I accept all terms and conditions</label>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <button class="button" type="submit" value="Sign-up">
+                        Sign-up
+                    </button>
+                   
+                </div>
+            </form>
+            <div class="login-signup">
+                <span class="text">Already a member? <a href="/login" class="text login-link">Login Now</a></span>
+              </div>
+        
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/javaScripts/log.js"></script>
+</body>
+
+</html>

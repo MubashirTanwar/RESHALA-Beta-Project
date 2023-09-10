@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RESHALA</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="icon" type="image/x-icon" href="/public/images/logo_favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/css/Styles.css" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="row">
+					<div id="img" class="col-lg-4 col-md-6">
+						<div class="navbar-header">
+							<a href="">
+								<div class="logo-img" alt="logo image">
+									<img src="/images/image-removebg-preview.png" alt="Logo" style="
+										height: 43px;
+									" />
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="search" placeholder="Search...">
+							<a href="#search" class="search_icon">
+								<i class="fa fa-search"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			</div>
+			</div>
+		</nav>
+	</header>
+    <div class="recommendations">
+		<h2 style="margin-top: 33px;">Your Listings</h2>
+	</div>
+    <div>
+		<div id="cardContainer" class="container">	
+
+				<% for( let i = 0; i < mylist.length; i++ ) { %>
+					<div class="product-card">
+						<a href="/product/<%= mylist[i].id %>">
+						<div class="product-tumb">
+						  <img src="<%= mylist[i].url %>" alt="">
+						</div>
+						<div class="product-details">
+						  <span class="product-catagory">Mumbai</span>
+						  <h4><%= mylist[i].bkname %></h4>
+						  <p><%= mylist[i].description %></p>
+						  <div class="product-bottom-details">
+							<div class="product-price">₹ <%= mylist[i].price %></div>
+							<div class="product-links">
+							  <a href=""><i class="fa fa-heart"></i></a>
+							  <a href=""><i class="fa fa-shopping-cart"></i></a>
+							</div>
+						  </div>
+						</div></a>
+					  </div> 
+				  <% } %>
+
+
+
+			</div>
+	</div>
+    </body>
